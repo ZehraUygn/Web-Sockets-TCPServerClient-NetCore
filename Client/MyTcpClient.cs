@@ -12,7 +12,6 @@ namespace Client
 
             private TcpClient _client;
 
-        // In this method we create a TcpClient object and connect to the server
             public async Task Connect(string ipAddress, int port)
             {
                 _client = new TcpClient();
@@ -20,8 +19,6 @@ namespace Client
                 Console.WriteLine("Connected to the server.");
             }
 
-
-        // In this method we send a message to the server and read the response
            public async Task SendMessage(string message)
             {
                 var stream = _client.GetStream();

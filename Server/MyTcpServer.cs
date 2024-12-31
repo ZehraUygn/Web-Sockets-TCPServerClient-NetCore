@@ -13,9 +13,6 @@ namespace Client
         private TcpListener _server;
 
 
-        // In this method we create a TcpListener object and start listening
-        // for incoming connections on the specified port. Each handeled client is handed over to
-        // HandleClientAsync method.
         public async Task Start(int port)
             {
                 _server = new TcpListener(IPAddress.Any, port);
@@ -30,9 +27,6 @@ namespace Client
                     _ = HandleClientAsync(client);
                 }
             }
-
-        // In this method we read the incoming data from the client,
-        // convert it to uppercase and send it back to the client.
 
         private async Task HandleClientAsync(TcpClient client)
             {
